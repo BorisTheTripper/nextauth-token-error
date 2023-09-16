@@ -11,14 +11,13 @@ import _GitHubProvider from 'next-auth/providers/github';
 // @ts-ignore
 const GitHubProvider: typeof _GitHubProvider = _GitHubProvider.default;
 
-console.log('🤔🤔🤔', process.env.GITHUB_CLIENT_ID!);
-console.log('🤔🤔🤔', process.env.GITHUB_CLIENT_SECRET!);
-
 export const authOptions: NextAuthOptions = {
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+      // commenting out the part below will cause a "redirect_uri_mismatch" error when trying to sign in
+      // if you're testing this, don't forget to first trigger nodemon at apps/sever/src/main.ts
       authorization: {
         params: {
           redirect_uri: 'http://localhost:4000/auth/callback/github',

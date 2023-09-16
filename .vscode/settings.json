@@ -3,6 +3,7 @@
     "**/node_modules": true,
     "**/pnpm-lock.yaml": true,
     "**/dist": true,
-    "**/.next": true
+    "**/.next": true,
+    "**/*.tsbuildinfo": true
   }
 }
