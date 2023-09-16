@@ -121,8 +121,8 @@ importers:
         specifier: ^16.3.1
         version: 16.3.1
       next-auth:
-        specifier: 4.22.1
-        version: 4.22.1(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 4.23.0
+        version: 4.23.0(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
       node-fetch:
         specifier: ^3.3.1
         version: 3.3.1
@@ -2469,31 +2469,6 @@ packages:
   /negotiator@0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
-    dev: false
-
-  /next-auth@4.22.1(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-NTR3f6W7/AWXKw8GSsgSyQcDW6jkslZLH8AiZa5PQ09w1kR8uHtR9rez/E9gAq/o17+p0JYHE8QjF3RoniiObA==}
-    peerDependencies:
-      next: ^12.2.5 || ^13
-      nodemailer: ^6.6.5
-      react: ^17.0.2 || ^18
-      react-dom: ^17.0.2 || ^18
-    peerDependenciesMeta:
-      nodemailer:
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.22.15
-      '@panva/hkdf': 1.1.1
-      cookie: 0.5.0
-      jose: 4.14.6
-      next: 13.4.19(react-dom@18.2.0)(react@18.2.0)
-      oauth: 0.9.15
-      openid-client: 5.5.0
-      preact: 10.17.1
-      preact-render-to-string: 5.2.6(preact@10.17.1)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      uuid: 8.3.2
     dev: false
 
   /next-auth@4.23.0(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):
