@@ -10,4 +10,4 @@ A Next.js + Express.js + NextAuth setup that results in a "no access token provi
 4. `pnpm install`
 3. `pnpm run dev`
 4. Go to `localhost:3000` while watching the terminal logs. If you see an `ECONNREFUSED` error, just go to `apps/server/src/main.ts`, edit the file slightly & save to trigger nodemon one more time. After this, refresh the broser page & you should see NextAuth logs in the server app.
-5. **Click "sign in" button** & watch what happens in the logs as you attempt to sign in.
+5. **Click "sign in" button** & watch what happens in the server logs and browser request tab as you attempt to sign in.
