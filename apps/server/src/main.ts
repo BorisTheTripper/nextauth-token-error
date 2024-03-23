@@ -1,11 +1,8 @@
-import express from 'express';
 import cors from 'cors';
+import express from 'express';
 import cookieParser from 'cookie-parser';
 
-import { authOptions, NextAuth as _NextAuth } from '@app/my-api';
-
-// @ts-ignore
-const NextAuth: typeof _NextAuth = _NextAuth.default;
+import { authOptions, ExpressAuth } from '@app/my-api';
 
 const app = express();
 
@@ -14,29 +11,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const authBaseUrl = '/auth/';
+app.enable('trust proxy');
 
-app.use((req, res, next) => {
-  console.log('🔑🔑🔑 naxtauth mw...');
-
-  if (!req.url.startsWith(authBaseUrl)) {
-    console.log('😐😐😐 skipping nextauth mw...');
-    return next();
-  }
-
-  req.query.nextauth = req.url
-    .slice(authBaseUrl.length)
-    .replace(/\?.*/, '')
-    .split('/');
-
-  console.log('req.url', req.url);
-  console.log('req.query', req.query);
-  console.log('');
-
+app.use('/auth/*', (req, res, next) => {
+  console.log('🔎🔎🔎🔎🔎🔎🔎🔎');
+  console.log('👀👀👀 METHOD:');
+  console.log(req.method);
+  console.log('👀👀👀 BASE URL:');
+  console.log(req.baseUrl);
+  console.log('👀👀👀 URL:');
+  console.log(req.url);
+  console.log('👀👀👀 PATH:');
+  console.log(req.path);
+  console.log('👀👀👀 HEADERS:');
+  console.log(req.headers);
+  console.log('👀👀👀 BODY:');
+  console.log(req.body);
+  console.log('👀👀👀 PARAMS:');
+  console.log(req.params);
   // @ts-ignore
-  NextAuth(req, res, authOptions);
+  ExpressAuth(authOptions)(req, res, next);
 });
 
 app.listen(4000, () => {
-  console.log(`🚀 Server ready at http://localhost:4000`);
+  console.log(`🚀🚀🚀🚀🚀🚀🚀 Server ready at http://localhost:4000`);
 });

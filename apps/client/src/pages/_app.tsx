@@ -8,6 +8,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
+  console.log("🔐🔐🔐🔐🔐🔐");
+  console.log(session);
   return (
     <SessionProvider session={session}>
       <Component {...pageProps} />

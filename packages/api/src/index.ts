@@ -1,3 +1,4 @@
 import './utils/fetch-polyfill';
+import './utils/crypto-polyfill';
 
-export { NextAuth, authOptions } from './auth';
+export { ExpressAuth, authOptions } from './auth';
